@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CoreDataStack.h"
 #import "RestService.h"
+#import "PhotosTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)appDelegate
+{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -24,6 +29,10 @@
     self.restService = [[RestService alloc] initWithContext:self.coreDataStack.serviceManagedObjectContext andBaseUrl:@"http://challenge.superfling.com"];
     
     [self.restService fetchPhotos];
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    PhotosTableViewController *controller = (PhotosTableViewController *) navigationController.topViewController;
+    controller.managedObjectContext = self.coreDataStack.managedObjectContext;
     
     return YES;
 }

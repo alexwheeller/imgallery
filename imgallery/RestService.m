@@ -26,15 +26,15 @@
         self.context = context;
         self.baseUrl = baseUrl;
         
-        AFImageResponseSerializer *serializer = [AFImageResponseSerializer serializer];
-        serializer.acceptableContentTypes = [serializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
+        self.imageJpegSerializer = [AFImageResponseSerializer serializer];
+        self.imageJpegSerializer.acceptableContentTypes = [self.imageJpegSerializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
     }
     return self;
 }
 
 -(void)fetchPhotos {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://challenge.superfling.com" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:self.baseUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *photos = responseObject;
         [self.context performBlock:^{
             for (NSDictionary *item in photos) {
@@ -49,6 +49,13 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (NSURLRequest*) imageRequestWithId:(NSInteger)imageId
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/photos/%ld", self.baseUrl, imageId]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0f];
+    return request;
 }
 
 @end

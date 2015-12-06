@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class AFImageResponseSerializer;
+
 @interface RestService : NSObject
 
-- (id)initWithContext:(NSManagedObjectContext *)context andBaseUrl:(NSString*)baseUrl;
+@property (nonatomic, strong) AFImageResponseSerializer *imageJpegSerializer;
 
--(void)fetchPhotos;
+- (id)initWithContext:(NSManagedObjectContext *)context andBaseUrl:(NSString*)baseUrl;
+- (void)fetchPhotos;
+- (NSURLRequest*) imageRequestWithId:(NSInteger)imageId;
 
 @end

@@ -17,5 +17,7 @@
 @property (nonatomic, strong) CoreDataStack *coreDataStack;
 @property (nonatomic, strong) RestService *restService;
 
++ (AppDelegate *)appDelegate;
+
 @end
 
