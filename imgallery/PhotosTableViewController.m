@@ -28,6 +28,16 @@
     self.dataSource.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.dataSource.cellReuseIdentifier = @"PhotoTableViewCell";
     self.tableView.delegate = self;
+
+    // setting the empty view showing when data is not yet ready
+    UILabel *messageLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,
+                                                                    self.tableView.bounds.size.width,
+                                                                    self.tableView.bounds.size.height)];
+    messageLbl.text = @"Loading...";
+    messageLbl.textAlignment = NSTextAlignmentCenter;
+    [messageLbl sizeToFit];
+    
+    self.tableView.backgroundView = messageLbl;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(id)cell forRowAtIndexPath:(NSIndexPath *)indexPath
