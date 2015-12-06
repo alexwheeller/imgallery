@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "CoreDataStack.h"
+#import "RestService.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.coreDataStack = [[CoreDataStack alloc] init];
+
+    self.restService = [[RestService alloc] initWithContext:self.coreDataStack.serviceManagedObjectContext andBaseUrl:@"http://challenge.superfling.com"];
+    
+    [self.restService fetchPhotos];
+    
     return YES;
 }
 
@@ -40,6 +48,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)saveContext
+{
+    NSError *error = nil;
+    [self.coreDataStack.managedObjectContext save:&error];
+    if (error) {
+        NSLog(@"error: %@", error.localizedDescription);
+    }
 }
 
 @end

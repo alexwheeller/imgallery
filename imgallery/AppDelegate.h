@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class CoreDataStack;
+@class RestService;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) CoreDataStack *coreDataStack;
+@property (nonatomic, strong) RestService *restService;
 
 @end
 

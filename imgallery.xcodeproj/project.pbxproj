@@ -10,7 +10,6 @@
 		35929E61488185502E502DE7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51772CCCBEE519DA230CA06A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		41380F091C144D2400C8FAED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F081C144D2400C8FAED /* main.m */; };
 		41380F0C1C144D2400C8FAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F0B1C144D2400C8FAED /* AppDelegate.m */; };
-		41380F0F1C144D2400C8FAED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F0E1C144D2400C8FAED /* ViewController.m */; };
 		41380F121C144D2400C8FAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41380F101C144D2400C8FAED /* Main.storyboard */; };
 		41380F141C144D2400C8FAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41380F131C144D2400C8FAED /* Assets.xcassets */; };
 		41380F171C144D2400C8FAED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41380F151C144D2400C8FAED /* LaunchScreen.storyboard */; };
@@ -19,6 +18,11 @@
 		41380F361C14535800C8FAED /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F331C14535800C8FAED /* Photo.m */; };
 		41380F371C14535800C8FAED /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F351C14535800C8FAED /* User.m */; };
 		41380F3A1C1453F200C8FAED /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41380F381C1453F200C8FAED /* Model.xcdatamodeld */; };
+		41380F401C145C3D00C8FAED /* ControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F3F1C145C3D00C8FAED /* ControllerDataSource.m */; };
+		41380F431C14662B00C8FAED /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F421C14662B00C8FAED /* CoreDataStack.m */; };
+		41380F461C146DE700C8FAED /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F451C146DE700C8FAED /* PhotosTableViewController.m */; };
+		41380F491C146E4200C8FAED /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F481C146E4200C8FAED /* PhotoTableViewCell.m */; };
+		41380F4C1C146EFE00C8FAED /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F4B1C146EFE00C8FAED /* RestService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +41,6 @@
 		41380F081C144D2400C8FAED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41380F0A1C144D2400C8FAED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41380F0B1C144D2400C8FAED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		41380F0D1C144D2400C8FAED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		41380F0E1C144D2400C8FAED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		41380F111C144D2400C8FAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41380F131C144D2400C8FAED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41380F161C144D2400C8FAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,16 @@
 		41380F341C14535800C8FAED /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		41380F351C14535800C8FAED /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		41380F391C1453F200C8FAED /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		41380F3E1C145C3D00C8FAED /* ControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerDataSource.h; sourceTree = "<group>"; };
+		41380F3F1C145C3D00C8FAED /* ControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerDataSource.m; sourceTree = "<group>"; };
+		41380F411C14662B00C8FAED /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		41380F421C14662B00C8FAED /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		41380F441C146DE700C8FAED /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
+		41380F451C146DE700C8FAED /* PhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
+		41380F471C146E4200C8FAED /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
+		41380F481C146E4200C8FAED /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
+		41380F4A1C146EFD00C8FAED /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
+		41380F4B1C146EFE00C8FAED /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		51772CCCBEE519DA230CA06A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6968624182A71C2AFE13D82E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,13 +121,21 @@
 				41380F2E1C14521900C8FAED /* Data Model */,
 				41380F0A1C144D2400C8FAED /* AppDelegate.h */,
 				41380F0B1C144D2400C8FAED /* AppDelegate.m */,
-				41380F0D1C144D2400C8FAED /* ViewController.h */,
-				41380F0E1C144D2400C8FAED /* ViewController.m */,
 				41380F101C144D2400C8FAED /* Main.storyboard */,
 				41380F131C144D2400C8FAED /* Assets.xcassets */,
 				41380F151C144D2400C8FAED /* LaunchScreen.storyboard */,
 				41380F181C144D2400C8FAED /* Info.plist */,
 				41380F071C144D2400C8FAED /* Supporting Files */,
+				41380F3E1C145C3D00C8FAED /* ControllerDataSource.h */,
+				41380F3F1C145C3D00C8FAED /* ControllerDataSource.m */,
+				41380F411C14662B00C8FAED /* CoreDataStack.h */,
+				41380F421C14662B00C8FAED /* CoreDataStack.m */,
+				41380F441C146DE700C8FAED /* PhotosTableViewController.h */,
+				41380F451C146DE700C8FAED /* PhotosTableViewController.m */,
+				41380F471C146E4200C8FAED /* PhotoTableViewCell.h */,
+				41380F481C146E4200C8FAED /* PhotoTableViewCell.m */,
+				41380F4A1C146EFD00C8FAED /* RestService.h */,
+				41380F4B1C146EFE00C8FAED /* RestService.m */,
 			);
 			path = imgallery;
 			sourceTree = "<group>";
@@ -311,9 +331,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41380F0F1C144D2400C8FAED /* ViewController.m in Sources */,
+				41380F491C146E4200C8FAED /* PhotoTableViewCell.m in Sources */,
 				41380F0C1C144D2400C8FAED /* AppDelegate.m in Sources */,
+				41380F461C146DE700C8FAED /* PhotosTableViewController.m in Sources */,
+				41380F4C1C146EFE00C8FAED /* RestService.m in Sources */,
 				41380F371C14535800C8FAED /* User.m in Sources */,
+				41380F431C14662B00C8FAED /* CoreDataStack.m in Sources */,
+				41380F401C145C3D00C8FAED /* ControllerDataSource.m in Sources */,
 				41380F091C144D2400C8FAED /* main.m in Sources */,
 				41380F361C14535800C8FAED /* Photo.m in Sources */,
 				41380F3A1C1453F200C8FAED /* Model.xcdatamodeld in Sources */,
