@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Photo Gallery-->
         <scene sceneID="Fhk-m3-aHQ">
             <objects>
-                <tableViewController id="Nlq-Tf-xjB" customClass="PhotosTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Photo Gallery" id="Nlq-Tf-xjB" customClass="PhotosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="J34-Gs-k17">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,18 @@
                             <outlet property="delegate" destination="Nlq-Tf-xjB" id="y0G-yc-cY8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="N1C-XN-53O"/>
+                    <navigationItem key="navigationItem" title="Photo Gallery" id="N1C-XN-53O"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jrz-JN-YcS">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="dvbdgfhj,k.">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDM-PP-2uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,6 @@
 		41380F0C1C144D2400C8FAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F0B1C144D2400C8FAED /* AppDelegate.m */; };
 		41380F121C144D2400C8FAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41380F101C144D2400C8FAED /* Main.storyboard */; };
 		41380F141C144D2400C8FAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41380F131C144D2400C8FAED /* Assets.xcassets */; };
-		41380F171C144D2400C8FAED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41380F151C144D2400C8FAED /* LaunchScreen.storyboard */; };
 		41380F221C144D2400C8FAED /* imgalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F211C144D2400C8FAED /* imgalleryTests.m */; };
 		41380F2D1C14513700C8FAED /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 41380F2C1C14513700C8FAED /* Podfile */; };
 		41380F361C14535800C8FAED /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F331C14535800C8FAED /* Photo.m */; };
@@ -43,7 +42,6 @@
 		41380F0B1C144D2400C8FAED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		41380F111C144D2400C8FAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41380F131C144D2400C8FAED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		41380F161C144D2400C8FAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41380F181C144D2400C8FAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41380F1D1C144D2400C8FAED /* imgalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imgalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41380F211C144D2400C8FAED /* imgalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = imgalleryTests.m; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				41380F0B1C144D2400C8FAED /* AppDelegate.m */,
 				41380F101C144D2400C8FAED /* Main.storyboard */,
 				41380F131C144D2400C8FAED /* Assets.xcassets */,
-				41380F151C144D2400C8FAED /* LaunchScreen.storyboard */,
 				41380F181C144D2400C8FAED /* Info.plist */,
 				41380F071C144D2400C8FAED /* Supporting Files */,
 				41380F3E1C145C3D00C8FAED /* ControllerDataSource.h */,
@@ -262,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41380F171C144D2400C8FAED /* LaunchScreen.storyboard in Resources */,
 				41380F141C144D2400C8FAED /* Assets.xcassets in Resources */,
 				41380F2D1C14513700C8FAED /* Podfile in Resources */,
 				41380F121C144D2400C8FAED /* Main.storyboard in Resources */,
@@ -371,14 +367,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		41380F151C144D2400C8FAED /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				41380F161C144D2400C8FAED /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -468,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D6B296EF66F8D9EEFBB24EF /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imgallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AK.imgallery;
@@ -480,7 +467,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6968624182A71C2AFE13D82E /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imgallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AK.imgallery;

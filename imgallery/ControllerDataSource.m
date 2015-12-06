@@ -39,12 +39,8 @@
     return section.numberOfObjects;
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    id object = [self objectAtIndexPath:indexPath];
-    id cell = [tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
-    [self.delegate prepareCell:cell withObject:object];
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
 }
 
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath

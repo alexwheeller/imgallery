@@ -10,7 +10,7 @@
 #import "ControllerDataSource.h"
 #import "PhotoTableViewCell.h"
 
-@interface PhotosTableViewController () <ControllerDataSourceDelegate>
+@interface PhotosTableViewController ()
 
 @property (nonatomic, strong) ControllerDataSource *dataSource;
 
@@ -21,19 +21,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Photo gallery";
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"photoId" ascending:YES selector:@selector(compare:)]];
     
     self.dataSource = [[ControllerDataSource alloc] initWithTableView:self.tableView];
     self.dataSource.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    self.dataSource.delegate = self;
     self.dataSource.cellReuseIdentifier = @"PhotoTableViewCell";
-    
+    self.tableView.delegate = self;
 }
 
-#pragma ControllerDataSourceDelegate
+-(void)tableView:(UITableView *)tableView willDisplayCell:(id)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id object = [self.dataSource objectAtIndexPath:indexPath];
+    [self prepareCell:cell withObject:object];
+}
+
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(id)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self abandonCell:cell];
+}
+
 - (void)prepareCell:(PhotoTableViewCell*)cell withObject:(id)object
 {
     [cell configureWith:object];
