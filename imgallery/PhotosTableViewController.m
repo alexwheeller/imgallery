@@ -9,6 +9,8 @@
 #import "PhotosTableViewController.h"
 #import "ControllerDataSource.h"
 #import "PhotoTableViewCell.h"
+#import "AppDelegate.h"
+#import "RestService.h"
 
 @interface PhotosTableViewController ()
 
@@ -33,11 +35,27 @@
     UILabel *messageLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,
                                                                     self.tableView.bounds.size.width,
                                                                     self.tableView.bounds.size.height)];
-    messageLbl.text = @"Loading...";
+    messageLbl.text = @"No photos";
     messageLbl.textAlignment = NSTextAlignmentCenter;
     [messageLbl sizeToFit];
     
     self.tableView.backgroundView = messageLbl;
+    
+    [self.refreshControl addTarget:self action:@selector(loadDataFromRestService) forControlEvents:UIControlEventValueChanged];
+    
+    [self loadDataFromRestService];
+}
+
+-(void)loadDataFromRestService
+{
+    [[AppDelegate appDelegate].restService fetchPhotos:^(NSError *error) {
+        if (error!=nil)
+            [[AppDelegate appDelegate] displayErrorMessage:error.localizedDescription];
+        
+        [self.refreshControl endRefreshing];
+    }];
+    
+    [self.refreshControl beginRefreshing];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(id)cell forRowAtIndexPath:(NSIndexPath *)indexPath

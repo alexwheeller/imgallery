@@ -19,5 +19,7 @@
 
 + (AppDelegate *)appDelegate;
 
+-(void) displayErrorMessage:(NSString*)message;
+
 @end
 

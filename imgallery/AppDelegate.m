@@ -28,7 +28,10 @@
 
     self.restService = [[RestService alloc] initWithContext:self.coreDataStack.serviceManagedObjectContext andBaseUrl:@"http://challenge.superfling.com"];
     
-    [self.restService fetchPhotos];
+    /*[self.restService fetchPhotos:^(NSError *error) {
+        if (error!=nil)
+            [self displayErrorMessage:error.localizedDescription];
+    }];*/
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     PhotosTableViewController *controller = (PhotosTableViewController *) navigationController.topViewController;
@@ -66,6 +69,14 @@
     if (error) {
         NSLog(@"error: %@", error.localizedDescription);
     }
+}
+
+-(void) displayErrorMessage:(NSString*)message
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:defaultAction];
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
 @end

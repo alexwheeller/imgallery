@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSString *baseUrl;
+@property (nonatomic) BOOL retryAfterNetworkFailure;
 
 @end
 
@@ -28,11 +29,24 @@
         
         self.imageJpegSerializer = [AFImageResponseSerializer serializer];
         self.imageJpegSerializer.acceptableContentTypes = [self.imageJpegSerializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
+        
+        [self startNetworkReachabilityMonitor];
     }
     return self;
 }
 
--(void)fetchPhotos {
+-(void)startNetworkReachabilityMonitor
+{
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+        if (status > 0 && self.retryAfterNetworkFailure)
+            [self fetchPhotos:nil];
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+-(void)fetchPhotos:(void (^)(NSError *error))completionHandler {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:self.baseUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *photos = responseObject;
@@ -45,8 +59,16 @@
             if (error) {
                 NSLog(@"Error: %@", error.localizedDescription);
             }
+            if (completionHandler)
+                completionHandler(error);
         }];
+        self.retryAfterNetworkFailure = NO;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.retryAfterNetworkFailure = YES;
+        
+        if (completionHandler)
+            completionHandler(error);
+        
         NSLog(@"Error: %@", error);
     }];
 }

@@ -16,7 +16,7 @@
 @property (nonatomic, strong) AFImageResponseSerializer *imageJpegSerializer;
 
 - (id)initWithContext:(NSManagedObjectContext *)context andBaseUrl:(NSString*)baseUrl;
-- (void)fetchPhotos;
+- (void)fetchPhotos: (void (^)(NSError *error))completionHandler;
 - (NSURLRequest*) imageRequestWithId:(NSInteger)imageId;
 
 @end
