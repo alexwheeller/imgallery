@@ -23,15 +23,21 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.coreDataStack = [[CoreDataStack alloc] init];
 
-    self.restService = [[RestService alloc] initWithContext:self.coreDataStack.serviceManagedObjectContext andBaseUrl:@"http://challenge.superfling.com"];
+    // setup Core Data Stack
+    NSURL* modelUrl = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
     
-    /*[self.restService fetchPhotos:^(NSError *error) {
-        if (error!=nil)
-            [self displayErrorMessage:error.localizedDescription];
-    }];*/
+    NSURL* storeUrl = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
+                                                             inDomain:NSUserDomainMask
+                                                    appropriateForURL:nil
+                                                               create:YES
+                                                                error:NULL];
+    storeUrl = [storeUrl URLByAppendingPathComponent:@"photodb.sqlite"];
+
+    self.coreDataStack = [[CoreDataStack alloc] initWithModelUrl:modelUrl andStoreUrl:storeUrl];
+
+    // initialise rest service
+    self.restService = [[RestService alloc] initWithContext:self.coreDataStack.serviceManagedObjectContext andBaseUrl:@"http://challenge.superfling.com"];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     PhotosTableViewController *controller = (PhotosTableViewController *) navigationController.topViewController;

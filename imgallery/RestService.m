@@ -75,7 +75,7 @@
 
 - (NSURLRequest*) imageRequestWithId:(NSInteger)imageId
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/photos/%ld", self.baseUrl, imageId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/photos/%ld", self.baseUrl, (long)imageId]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0f];
     return request;
 }

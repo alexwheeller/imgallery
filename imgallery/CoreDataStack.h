@@ -14,4 +14,6 @@
 @property (nonatomic,readonly) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic,readonly) NSManagedObjectContext* serviceManagedObjectContext;
 
+- (id)initWithModelUrl:(NSURL*)modelUrl andStoreUrl:(NSURL*)storeUrl;
+
 @end

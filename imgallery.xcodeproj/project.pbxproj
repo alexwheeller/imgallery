@@ -12,7 +12,6 @@
 		41380F0C1C144D2400C8FAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F0B1C144D2400C8FAED /* AppDelegate.m */; };
 		41380F121C144D2400C8FAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41380F101C144D2400C8FAED /* Main.storyboard */; };
 		41380F141C144D2400C8FAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41380F131C144D2400C8FAED /* Assets.xcassets */; };
-		41380F221C144D2400C8FAED /* imgalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F211C144D2400C8FAED /* imgalleryTests.m */; };
 		41380F2D1C14513700C8FAED /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 41380F2C1C14513700C8FAED /* Podfile */; };
 		41380F361C14535800C8FAED /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F331C14535800C8FAED /* Photo.m */; };
 		41380F371C14535800C8FAED /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F351C14535800C8FAED /* User.m */; };
@@ -22,6 +21,8 @@
 		41380F461C146DE700C8FAED /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F451C146DE700C8FAED /* PhotosTableViewController.m */; };
 		41380F491C146E4200C8FAED /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F481C146E4200C8FAED /* PhotoTableViewCell.m */; };
 		41380F4C1C146EFE00C8FAED /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F4B1C146EFE00C8FAED /* RestService.m */; };
+		41380F4E1C15134600C8FAED /* ControllerDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F4D1C15134600C8FAED /* ControllerDataSourceTests.m */; };
+		41380F511C16001600C8FAED /* TestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41380F501C16001600C8FAED /* TestTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 		41380F131C144D2400C8FAED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41380F181C144D2400C8FAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41380F1D1C144D2400C8FAED /* imgalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imgalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41380F211C144D2400C8FAED /* imgalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = imgalleryTests.m; sourceTree = "<group>"; };
 		41380F231C144D2400C8FAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41380F2C1C14513700C8FAED /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		41380F321C14535800C8FAED /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
@@ -62,6 +62,9 @@
 		41380F481C146E4200C8FAED /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
 		41380F4A1C146EFD00C8FAED /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		41380F4B1C146EFE00C8FAED /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
+		41380F4D1C15134600C8FAED /* ControllerDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerDataSourceTests.m; sourceTree = "<group>"; };
+		41380F4F1C16001600C8FAED /* TestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableView.h; sourceTree = "<group>"; };
+		41380F501C16001600C8FAED /* TestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableView.m; sourceTree = "<group>"; };
 		51772CCCBEE519DA230CA06A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6968624182A71C2AFE13D82E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,8 +152,10 @@
 		41380F201C144D2400C8FAED /* imgalleryTests */ = {
 			isa = PBXGroup;
 			children = (
-				41380F211C144D2400C8FAED /* imgalleryTests.m */,
 				41380F231C144D2400C8FAED /* Info.plist */,
+				41380F4D1C15134600C8FAED /* ControllerDataSourceTests.m */,
+				41380F4F1C16001600C8FAED /* TestTableView.h */,
+				41380F501C16001600C8FAED /* TestTableView.m */,
 			);
 			path = imgalleryTests;
 			sourceTree = "<group>";
@@ -344,7 +349,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41380F221C144D2400C8FAED /* imgalleryTests.m in Sources */,
+				41380F4E1C15134600C8FAED /* ControllerDataSourceTests.m in Sources */,
+				41380F511C16001600C8FAED /* TestTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

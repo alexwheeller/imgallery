@@ -18,27 +18,18 @@
 
 @implementation CoreDataStack
 
-- (id)init
+- (id)initWithModelUrl:(NSURL*)modelUrl andStoreUrl:(NSURL*)storeUrl
 {
     self = [super init];
     if (self) {
-        [self createManagedObjectContexts];
+        [self createManagedObjectContexts:storeUrl andModelUrl:modelUrl];
     }
     return self;
 }
 
 // create two managedObjectContexts, one for populating from the REST API and another for reading from UI
-- (void)createManagedObjectContexts
+- (void)createManagedObjectContexts:(NSURL*)storeUrl andModelUrl:(NSURL*)modelUrl
 {
-    NSURL* storeUrl = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
-                                                             inDomain:NSUserDomainMask
-                                                    appropriateForURL:nil
-                                                               create:YES
-                                                                error:NULL];
-    storeUrl = [storeUrl URLByAppendingPathComponent:@"photodb.sqlite"];
-    
-    NSURL* modelUrl = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
-
     self.managedObjectContext = [self createManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType andStoreUrl:storeUrl andModelUrl:modelUrl];
     self.managedObjectContext.undoManager = nil;
     

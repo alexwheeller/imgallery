@@ -9,7 +9,7 @@
         <!--Photo Gallery-->
         <scene sceneID="Fhk-m3-aHQ">
             <objects>
-                <tableViewController title="Photo Gallery" id="Nlq-Tf-xjB" customClass="PhotosTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PhotosTableViewController" title="Photo Gallery" id="Nlq-Tf-xjB" customClass="PhotosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="J34-Gs-k17">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
